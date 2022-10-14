@@ -5,13 +5,13 @@ on:
     branches:
      - main
 
- jobs:
+jobs:
   build-and-deploy:
-    runs-on: ubutun-latest
+    runs-on: ubuntu-latest
 
     steps:
-      - name: Chekout
-        uses: actions/chekout@v3
+      - name: Checkout
+        uses: actions/checkout@v3
 
       - name: Setup Node.js
         uses: actions/setup-node@v3
