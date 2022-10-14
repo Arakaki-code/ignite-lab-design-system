@@ -1,16 +1,16 @@
-name: Deploy storybook
+name: Deploy Storybook
 
 on:
   push:
     branches:
-     - main
+      - main
 
 jobs:
-  build-and-deploy:
+  build-and-deploy
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout
+      - name: checkout
         uses: actions/checkout@v3
 
       - name: Setup Node.js
@@ -24,8 +24,7 @@ jobs:
       - name: Build Storybook
         run: npm run build-storybook
 
-      -name: Deploy Storybook
+      - name: Deploy Storybook
         run: npm run deploy-storybook -- --ci --existing-output-dir=storybook-static
         env:
           GH_TOKEN: ${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}
-          
